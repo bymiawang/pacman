@@ -84,17 +84,16 @@ function playGame() {
     text("made by mia ✿", windowWidth / 2, windowHeight / 2 + 380);
 }
 
-function displayGameOver() {
+function displayGameWon() {
     background(0);
     fill(255);
     textAlign(CENTER, CENTER);
     textSize(64);
     textStyle(BOLD);
-    text("GAME OVER", width / 2, height / 2 - 60);
+    text("YOU WIN!", width / 2, height / 2 - 60);
     textSize(24);
     text("Final Score: " + score, width / 2, height / 2 + 5);
 
-    // Play Again button with rounded corners
     let buttonWidth = 200;
     let buttonHeight = 50;
     let cornerRadius = 10;
@@ -105,7 +104,40 @@ function displayGameOver() {
     textSize(19);
     text("Play Again", width / 2, height / 2 + 125);
 
-    // Check if the mouse is over the button
+    if (
+        mouseX > width / 2 - buttonWidth / 2 &&
+        mouseX < width / 2 + buttonWidth / 2 &&
+        mouseY > height / 2 + 100 &&
+        mouseY < height / 2 + 150
+    ) {
+        fill(150);
+        rect(width / 2 - buttonWidth / 2, height / 2 + 100, buttonWidth, buttonHeight, cornerRadius);
+        fill(255);
+        textSize(19);
+        text("Play Again", width / 2, height / 2 + 125);
+    }
+}
+
+function displayGameOver() {
+    background(0);
+    fill(255);
+    textAlign(CENTER, CENTER);
+    textSize(64);
+    textStyle(BOLD);
+    text("GAME OVER", width / 2, height / 2 - 60);
+    textSize(24);
+    text("Final Score: " + score, width / 2, height / 2 + 5);
+
+    let buttonWidth = 200;
+    let buttonHeight = 50;
+    let cornerRadius = 10;
+
+    fill(100);
+    rect(width / 2 - buttonWidth / 2, height / 2 + 100, buttonWidth, buttonHeight, cornerRadius);
+    fill(255);
+    textSize(19);
+    text("Play Again", width / 2, height / 2 + 125);
+
     if (
         mouseX > width / 2 - buttonWidth / 2 &&
         mouseX < width / 2 + buttonWidth / 2 &&
@@ -130,6 +162,8 @@ function mouseClicked() {
         mouseY > height / 2 + 100 &&
         mouseY < height / 2 + 150
     ) {
-        initializeGame(); // Reset the game
+        initializeGame();
+        gameOver = false; // Reset gameOver
+        gameWon = false;  // Reset gameWon
     }
 }
