@@ -77,9 +77,11 @@ function playGame() {
     textSize(50);
     textStyle(BOLD);
     text("WELCOME TO PAC-MAN'S WORLD", windowWidth / 2 , windowHeight / 2 - 300);
-    textSize(20);
     textStyle(ITALIC);
+    textSize(20);
     text("Use arrow keys to move around. Press and release mouse to change size.", windowWidth / 2 , windowHeight / 2 + 300);
+    textSize(10);
+    text("made by mia ✿", windowWidth / 2, windowHeight / 2 + 380);
 }
 
 function displayGameOver() {
