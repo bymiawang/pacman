@@ -1,5 +1,3 @@
-// This file will initialize the p5 sketch, including the setup and draw functions
-
 let dots = [];
 let ghosts = [];
 let pacmanSpeed = 4;
